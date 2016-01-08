@@ -100,6 +100,9 @@ while 1:
 		        text += "Magnitude (Lower is better): {}\n".format(i['magnitude_number'])
     
 
+
+    if text is "-----\n":
+	text = "No Flybys in the next couple days!\n"
     # for the purpose of knowing when data is grabbed
     current_time = datetime.datetime.now()  # get time
     current_time = str(current_time)  # make to a string to format
