@@ -5,7 +5,6 @@ from twilio.rest import TwilioRestClient
 
 
 
-
 # let import.io grab data and make json
 
 # display purpoe and get user input for zipcode and telephone number
@@ -16,6 +15,7 @@ zip_code = str(zip_code)	# format to string
 print("Please enter your phone number: ")
 phone = input(">>")
 phone = str(phone)		# format to string
+
 
 # get dates
 # the purpose of this is to display todays and tomorrow's flybys
@@ -109,8 +109,16 @@ while 1:
     print("\nData Grab date: %s" % current_time[:-7])  # print time, chop off fraction of second
     print "\n%s" % text
     text = str(text)
+
     client = TwilioRestClient()
     message = client.messages.create(to="+1"+phone, from_="+19518015143", body=text)
     time.sleep(604800)  # repeat every 7 days
 
 
+# Thing to add
+# Set up on Raspberry Pi
+#	Get script running
+#	Set up flask server?
+# allow script to run and wait for input from an incoming text
+# take zipcode as input from text
+# respond with ISS flyby data
