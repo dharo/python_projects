@@ -5,7 +5,7 @@ app = Flask(__name__)
  
 # Try adding your own number to this list!
 callers = {
-    "+19513237621": "David",
+    "some_phone_number": "David",
 }
  
 @app.route("/", methods=['GET', 'POST'])
